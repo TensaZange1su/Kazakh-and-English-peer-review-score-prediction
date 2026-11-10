@@ -1,0 +1,7 @@
+split_a,split_b,paper_id,split_group_id,title_en,abstract_en,normalized_title_en,title_kk,abstract_kk,normalized_title_kk,near_abstract_en,near_abstract_kk,method
+train,validation,0,0,0,0,0,0,0,0,0,0,paper_grouped
+train,test,0,0,0,0,0,0,0,0,0,0,paper_grouped
+validation,test,0,0,0,0,0,0,0,0,0,0,paper_grouped
+train,validation,40,40,40,40,40,40,40,40,0,0,random_row
+train,test,37,37,37,37,37,37,37,37,0,0,random_row
+validation,test,11,11,11,11,11,11,11,11,0,0,random_row

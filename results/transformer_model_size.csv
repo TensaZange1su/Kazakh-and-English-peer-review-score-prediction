@@ -1,0 +1,2 @@
+model,parameters,loaded_weights_mb,repository_snapshot_mb,weight_dtype
+intfloat/multilingual-e5-small,117653760,448.8134765625,2174.5700492858887,torch.float32

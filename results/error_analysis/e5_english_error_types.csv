@@ -1,0 +1,6 @@
+error_type,count
+Moderate -> High,11
+Moderate -> Low,9
+High -> Low,6
+Low -> Moderate,6
+High -> Moderate,4
