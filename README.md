@@ -1,3 +1,17 @@
+# Peer Review Score Prediction
+
+## Integrated Streamlit application
+
+Participant 3 implementation: prediction in English and Kazakh, SQLite history, model comparisons, analytics, and repeatable inference benchmarks. See [application setup and demo instructions](rauan/APPLICATION.md).
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r rauan/requirements.txt
+cd rauan
+streamlit run app.py
+```
+
 # Topic 26 · Participant 1 data handoff
 
 **Peer Review Score Prediction from Kazakh and English Abstracts**  
