@@ -87,3 +87,9 @@ This environment emits scikit-learn artifact-version warnings and NumPy matrix-o
 The real E5 encoder was also downloaded and checked offline: all 58 English and 58 Kazakh reference embeddings matched within numerical tolerance, and both language-specific and multilingual head predictions matched exactly.
 
 All three real E5 CPU benchmarks also completed with three repeats of 1,000 texts: English 9.964 s, Kazakh 10.626 s, multilingual 9.644 s. The encoder has 117,653,760 parameters and 448.813 MiB of loaded parameter weights; the active cached snapshot measured 470.441 MiB. All 12 local benchmark rows were imported into SQLite. The offline encoder copy occupies approximately 466 MiB and includes the tokenizer.
+
+## Interactive playground
+
+Use the Home shortcuts to open Prediction or Analytics. Prediction includes bilingual sample buttons, live word/character counts, and an optional TF-IDF/Transformer comparison. Each successful model prediction is saved separately. Results remain visible while you edit; a warning identifies inputs or model selections that have changed since the last run. E5 failures leave any successful TF-IDF result available. Samples illustrate app behavior and do not have predetermined scores.
+
+Model Comparison and Analytics provide hoverable charts with family, model, and metric filters. History supports literal text search, model/score filters, full input inspection, and CSV export of matching rows. Empty filters show all available records; an empty selection in the chart controls displays an explanatory message. The UI test checks sample loading, comparison persistence (with mocked inference), changed-input warnings, and empty search results; model parity remains covered separately.

@@ -6,3 +6,5 @@ scikit-learn==1.6.1
 joblib>=1.4,<2
 sentence-transformers>=3.4,<4
 torch>=2.2,<3
+
+altair>=5.4,<6
