@@ -9,9 +9,13 @@ from streamlit.testing.v1 import AppTest
 class AppTests(unittest.TestCase):
     def test_prediction_history_and_navigation(self):
         with tempfile.TemporaryDirectory() as directory:
+            # убрал повторный импорт path
             os.environ['APP_DB_PATH'] = str(Path(directory) / 'app.sqlite3')
             try:
-                app = AppTest.from_file('app.py').run(timeout=180)
+                # актуальный файл лежит в папке rauan
+                APP_PATH = Path(__file__).resolve().parents[1] / "app.py"
+                app = AppTest.from_file(str(APP_PATH)).run(timeout=180)
+
                 self.assertFalse(app.exception)
                 app.sidebar.radio[0].set_value('Prediction').run()
                 app.text_input[0].set_value('Academic machine learning')

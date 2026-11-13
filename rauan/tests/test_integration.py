@@ -39,9 +39,10 @@ class IntegrationTests(unittest.TestCase):
 
     def test_all_tfidf_predictions_match_handoff(self):
         import numpy as np
-        with (ROOT / 'data/splits/test.csv').open() as stream:
+        # добавил стандарт кодировки utf-8
+        with (ROOT / 'data/splits/test.csv').open(encoding='utf-8-sig', newline='') as stream:
             papers = {r['review_id']: r for r in csv.DictReader(stream)}
-        with (ROOT / 'results/tfidf_predictions/all_predictions.csv').open() as stream:
+        with (ROOT / 'results/tfidf_predictions/all_predictions.csv').open(encoding='utf-8-sig', newline='') as stream:
             predictions = list(csv.DictReader(stream))
         for model_id in available_models('en') + available_models('kk'):
             if model_id.startswith('e5_'):
@@ -63,9 +64,9 @@ class IntegrationTests(unittest.TestCase):
     def test_transformer_handoff_metrics(self):
         import numpy as np
         from sklearn.metrics import accuracy_score, f1_score
-        with (ROOT / 'data/splits/test.csv').open() as stream:
+        with (ROOT / 'data/splits/test.csv').open(encoding='utf-8-sig', newline='') as stream:
             labels = [r['label'] for r in csv.DictReader(stream)]
-        with (ROOT / 'results/transformer_metrics.csv').open() as stream:
+        with (ROOT / 'results/transformer_metrics.csv').open(encoding='utf-8-sig', newline='') as stream:
             metrics = list(csv.DictReader(stream))
         for row in metrics:
             name = row['model'].removeprefix('e5_')
@@ -81,7 +82,7 @@ class IntegrationTests(unittest.TestCase):
         import numpy as np
         for language, name in [('en', 'english'), ('kk', 'kazakh')]:
             embedding = np.load(ROOT / f'models/transformer/embeddings/test_{language}.npy')[:1]
-            with (ROOT / 'data/splits/test.csv').open() as stream:
+            with (ROOT / 'data/splits/test.csv').open(encoding='utf-8-sig', newline='') as stream:
                 paper = next(csv.DictReader(stream))
             for model_id in (f'e5_{name}', 'e5_multilingual'):
                 class Encoder:
