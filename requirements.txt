@@ -1,0 +1,15 @@
+# Python 3.12 recommended
+# Peer Review Score Prediction from Kazakh and English Abstracts
+
+streamlit>=1.40,<2
+pandas>=2.2,<3
+numpy>=1.26,<3
+scikit-learn==1.6.1
+joblib>=1.4,<2
+sentence-transformers>=3.4,<4
+torch>=2.2,<3
+altair>=5.4,<6
+
+# Data analysis and notebook support
+matplotlib>=3.10,<4
+ipykernel>=6.31,<7
